@@ -4,11 +4,10 @@
 \author{Ben Kellman}
 \title{Resume}
 
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
 \usepackage{titling}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{enumitem}
-\usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
 \usepackage{qrcode}
 \usepackage{helvet}
@@ -19,8 +18,8 @@
 
 
 \titleformat{\section}
-{\large \MakeUppercase}
-{}
+{\large}
+{\MakeUppercase{#1}}
 {0em}
 {\vspace{-0.6em}}[\rule{\textwidth}{0.1em}]
 
@@ -97,11 +96,12 @@
 
   \resumeSection{Software}{}{
     \item MS Office Suit, Altium, KiCAD, Elciplse, VSCode, CLion, PyCharm, Unity3D, Windows/Linux Terminal
-    }
+  }
 
   \resumeSection{Hardware}{}{
     \item Soldering, Breadboarding, Laser Cutting, 3D Printing, Electronics Lab Equipment
   }
+
 \end{minipage}
 \begin{minipage}[t]{0.34\textwidth}
   \section{education}
