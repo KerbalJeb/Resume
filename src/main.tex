@@ -10,18 +10,16 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
-
-\usepackage[letterspace=75]{microtype}
-
-
-
+\usepackage{qrcode}
 \usepackage{helvet}
+
+
 \renewcommand{\familydefault}{\sfdefault}
 \pagenumbering{gobble}
 
 
 \titleformat{\section}
-{\large \lsstyle \MakeUppercase}
+{\large \MakeUppercase}
 {}
 {0em}
 {\vspace{-0.6em}}[\rule{\textwidth}{0.1em}]
@@ -79,7 +77,7 @@
 \begin{document}
 
 \begin{center}
-  {\bfseries \LARGE \lsstyle \MakeUppercase{Ben Kellman}}
+  {\bfseries \LARGE \MakeUppercase{Ben Kellman}}
   
   \vspace{0.75em}
   \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}} -- \underline{\href{www.BenKellman.ca}{BenKellman.ca}}
@@ -104,7 +102,7 @@
     }
 
   \resumeSection{Hardware}{}{
-    \item Soldering, Breadboarding, Lab Equipment(Oscilloscope, Function Generator, ect.), Laser Cutting, 3D Printing
+    \item Soldering, Breadboarding, Laser Cutting, 3D Printing, Electronics Lab Equipment
   }
 \end{minipage}
 \begin{minipage}[t]{0.34\textwidth}
@@ -118,6 +116,7 @@
 
   \section{awards}
   \section{about me}
+  \qrcode{https://www.benkellman.ca}
 \end{minipage}
 
 \section{experience}
