@@ -26,14 +26,30 @@
 {0em}
 {\vspace{-0.6em}}[\rule{\textwidth}{0.1em}]
 
-\renewcommand{\maketitle}{
-\begin{center}
-    {\bfseries \LARGE \lsstyle \MakeUppercase{Ben Kellman}}
-    
-    \vspace{0.75em}
-    \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}}
+\newcommand{\minicolumns}[2]{
+  \begin{minipage}[t]{0.25\textwidth}
+    \begin{flushright}
+      #1
+    \end{flushright}
+  \end{minipage}
+  \hfill    
+  \begin{minipage}[t]{0.7\textwidth}
+    #2
+  \end{minipage}   
+}
 
-\end{center}
+\newcommand{\resumeSection}[3]{
+  \minicolumns{
+      \textbf{#1}\\          
+      \textit{#2}
+    }
+    {  
+      \begin{itemize}[leftmargin=*]
+          \setlength\itemsep{-0.1em}
+          #3
+      \end{itemize}
+  }
+  \vspace{1em}
 }
 
 \newcommand{\ritem}[1]{
@@ -42,8 +58,6 @@
 
 \newcommand{\fancybullet}[2]{
 { {
-
-
 \parbox[t]{5.5cm}{
 \begin{minipage}[t]{5.5cm}
    \begin{list}{\quad}{}
@@ -64,122 +78,59 @@
 
 \begin{document}
 
-\maketitle
+\begin{center}
+  {\bfseries \LARGE \lsstyle \MakeUppercase{Ben Kellman}}
+  
+  \vspace{0.75em}
+  \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}} -- \underline{\href{www.BenKellman.ca}{BenKellman.ca}}
 
-\section{education}
-\fancybullet{
-\ritem{\bfseries University of Victoria}
-\ritem{Sept 2017-Present}
-}{
-\item Bachelor of Electrical Engineering (Term 2A)
-\item GPA: 8.5/9.0
-}
+\end{center}
+\vspace{1em}
 
-\section{skills}
-\fancybullet{
-\ritem{\bfseries Programming}
-}{
-\item C, C++, C\#, Python
-}
-\fancybullet{
-\ritem{\bfseries Software}
-}{
-\item MS Office Suit, \LaTeX, Autodesk Inventor 
-}
+\begin{minipage}[t]{0.65\textwidth}
+  \section{projects}
+  \input{Project.tex}
+  
+  \textit{See \underline{\href{www.benkellman.ca}{benkellman.ca}} for more details}
 
-\fancybullet{
-\ritem{\bfseries Hardware}
-}{
-\item Soldering, Breadboarding, PCB Design(Eagle), PC Assembly, Basic Lab \newline Equipment(Oscilloscope, Function Generator, ect.)
-}
+  \section{skills}
+  \resumeSection{Langages}{Libraries/Tools}{
+    \item C, C++, Python, Matlab
+    \item GoogleTest, FreeRTOS, PyTest, Numpy, OpenCV, TravisCI, GCC toolchain, Docker, Git, Perforce
+  }
 
+  \resumeSection{Software}{}{
+    \item MS Office Suit, Altium, KiCAD, Elciplse, VSCode, CLion, PyCharm, Unity3D, Windows/Linux Terminal
+    }
+
+  \resumeSection{Hardware}{}{
+    \item Soldering, Breadboarding, Lab Equipment(Oscilloscope, Function Generator, ect.), Laser Cutting, 3D Printing
+  }
+\end{minipage}
+\begin{minipage}[t]{0.34\textwidth}
+  \section{education}
+  \begin{itemize}
+    \setlength\itemsep{-0.1em}
+    \item Attending the University of Victoria
+    \item Term 3B of my Bachelors in EE
+    \item Current GPA: 8.8/9.0
+  \end{itemize}
+
+  \section{awards}
+  \section{about me}
+\end{minipage}
 
 \section{experience}
-\fancybullet{
-\ritem {\bfseries University of Victoria}
-\ritem {Science Venture Instructor}
-\ritem{Jun 2018-Sept 2018}
-}{
-\item Worked with teachers to deliver in class STEM workshops
-\item Developed original STEM related camp curriculum under tight time pressure
-\item Worked with office staff, high school volunteers and a partner to co-run STEM summer camp for 8 weeks
-}
-\vspace{1em}
-\fancybullet{
-\ritem{\bfseries Science Venture}
-\ritem{Volunteer}
-\ritem{2016-2017}
-}{
-\item Supported campers in competing STEM related activities such as Arduino projects 
-\item Assisted with supervising campers in grades K-9
+\resumeSection{Schneider Electric}{Firmware Test(2019/2020)}{
+  \item Wrote and exicuited manual and automated tests on smart power meteres (Cortex A and VxWorks based)
+  \item Worked closely with both dev and test teams to develop new test cases
+  \item Tested a varity of communications protocals using PyTest(Python testing framework) such as telnet, SSH, SFTP and more
+  \item Worked as part of a SCRUM team for 8 months
 }
 
-\section{projects}
-\fancybullet{
-\ritem{\bfseries{VEX Robot}}
-\ritem{Engineering Design Project}
+\resumeSection{University of Victoria}{STEM Instructor(2018)}{
+  \item Worked with teachers to deliver over 30 in class STEM workshops
+  \item Developed original STEM related camp curriculum under tight time pressure 
+  that many parents claimed were their kids favorite activies
 }
-{
-\item Led a team of two other engineering students to build and design a VEX robot
-\item Robot was capable of quickly locating an IR beacon and attaching a string to it
-}
-\vspace{0.3em}
-\fancybullet{
-\ritem{\bfseries{Magnetic Levitation}}
-\ritem{Personal Arduino Project}
-}
-{
-\item Suspended a neodymium magnet through the use of an electromagnet  
-\item Utilized an Arduino and hall effect sensors to provide feedback control(PID) 
-}
-\vspace{0.3em}
-
-\vspace{0.3em}
-\fancybullet{
-\ritem{\bfseries{Personal Computer}}
-\ritem{Built for Gaming \& Blender}
-}
-{
-\item Researched best priced components for my needs
-\item Troubleshot problems during PC assembly
-}
-
-
-\section{awards}
-
-\fancybullet{
-\ritem{Engineers \& Geoscientists BC}
-\ritem{President's \& Dean's}
-\ritem{Entrance Award}
-}
-{
-\item University of Victoria, 2018
-\item University of Victoria, 2017
-}
-
-
-\section{interests}
-
-\fancybullet{
-\ritem{Microcontroller Projects}
-\ritem{Model Making}
-\ritem{Sci-Fi}
-}
-{
-\item Using Arduinos and recently STM32 dev boards
-\item Both physical models from kits and virtual models using Blender
-\item Shows and books such as Star Trek, The Expanse and HG2G
-}
-\vfill
-\textit{References Available on Request}
-
 \end{document}
-
-\fancybullet{
-\ritem{\bfseries{Twitter Powered Robot}}
-\ritem{Personal IoT Project}
-}
-{
-\item
-\item
-}
