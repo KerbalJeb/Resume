@@ -17,6 +17,5 @@ deploy:
     - src/main.pdf
   on:
     tag: 'true'
-  cleanup: false
-  draft: true
-  
+    branch: master
+  cleanup: true  

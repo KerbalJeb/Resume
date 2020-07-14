@@ -10,6 +10,7 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{qrcode}
+\usepackage{ragged2e}
 
 \renewcommand\familydefault{\sfdefault}
 \pagenumbering{gobble}
@@ -19,99 +20,113 @@
 {\large}
 {\MakeUppercase{#1}}
 {0em}
-{\vspace{-0.6em}}[\rule{\textwidth}{0.1em}]
+{\vspace{-0.6em}}[\rule{\textwidth}{1.5pt}]
 
+\newcommand{\grayhline}{
+  \noindent\makebox[\linewidth]{\textcolor{gray}{\rule{0.95\textwidth}{1pt}}}\\
+}
+%TODO Clean up these commands to make them more useful
 \newcommand{\minicolumns}[2]{
   \begin{minipage}[t]{0.25\textwidth}
     \begin{flushright}
       #1
     \end{flushright}
   \end{minipage}
-  \hfill    
+  \hfill
   \begin{minipage}[t]{0.7\textwidth}
     #2
-  \end{minipage}   
+  \end{minipage}
 }
 
 \newcommand{\resumeSection}[3]{
   \minicolumns{
-      \textbf{#1}\\          
+      \textbf{#1}\\
       \textit{#2}
     }
-    {  
+    {
       \begin{itemize}[leftmargin=*]
+          \justifying
           \setlength\itemsep{-0.1em}
           #3
       \end{itemize}
   }
-  \vspace{1em}
+  \vspace{0.5\baselineskip}
 }
 
 \begin{document}
 
 \begin{center}
   \textbf{\LARGE{\MakeUppercase{Ben Kellman}}}
-  
+
   \vspace{0.75em}
-  \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}} -- \underline{\href{www.BenKellman.ca}{BenKellman.ca}}
+  \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}} -- \underline{\href{www.BenKellman.ca}{www.benkellman.ca}}
 
 \end{center}
 \vspace{1em}
 
 \begin{minipage}[t]{0.65\textwidth}
   \section{projects}
-  
+% TODO: Break into separate doc and reorder
+% TODO: Switch to paragraph format
   \resumeSection{VEX Robot}{2018}{
       \item Worked with two students to build and test a robot
       \item Programmed in C to find a IR beacon using photodiodes
-      \item Proved to be the fastest and most reliable design out of our lab section 
+      \item Proved to be the fastest and most reliable design out of our lab section
   }
 
+  \grayhline
   \resumeSection{Magnetic Levitator}{2020}{
       \item Suspended a neodymium magnet through the use of an electromagnet
       \item Utilized an Arduino and hall effect sensors to provide feedback control(PID)
   }
 
+  \grayhline
   \resumeSection{Reflow Oven}{2020}{
       \item Used a STM32 MCU to create a reflow oven controller
       \item Created USB interface to control set profile
       \item Created custom PCB in Altium for MCU and control circuitry
   }
 
+  \grayhline
   \resumeSection{Alarm Clock}{2020}{
       \item Design project to create an Arduino based alarm clock
       \item Worked with a partner to design custom PCB in KiCAD
       \item Remotely collaberated on code and PCB using GitHub
   }
-  
+
   \textit{See \underline{\href{www.benkellman.ca}{benkellman.ca}} for more details}
 
   \section{skills}
+  %TODO Try to improve formatting of this one
   \resumeSection{Langages}{Libraries/Tools}{
     \item C, C++, Python, Matlab
-    \item GoogleTest, FreeRTOS, PyTest, Numpy, OpenCV, TravisCI, GCC toolchain, Docker, Git, Perforce
+    \item GoogleTest, FreeRTOS, PyTest, Numpy, OpenCV,\\ TravisCI, GCC toolchain, Docker, Git, Perforce
   }
 
+  \grayhline
   \resumeSection{Software}{}{
     \item MS Office Suit, Altium, KiCAD, Elciplse, VSCode, CLion, PyCharm, Unity3D, Windows/Linux Terminal
   }
 
+  \grayhline
   \resumeSection{Hardware}{}{
-    \item Soldering, Breadboarding, Laser Cutting, 3D Printing, Electronics Lab Equipment
+    \item Soldering, Breadboarding, Laser Cutting, 3D Printing,\\ Electronics Lab Equipment
   }
 
 \end{minipage}
 \begin{minipage}[t]{0.34\textwidth}
   \section{education}
-  \begin{itemize}
+  \begin{itemize}[leftmargin=*]
     \setlength\itemsep{-0.1em}
     \item Attending the University of Victoria
     \item Term 3B of my Bachelors in EE
     \item Current GPA: 8.8/9.0
   \end{itemize}
 
-  \section{awards}
   \section{about me}
+  \paragraph{}
+  % TODO: FIll in about me section
+
   \qrcode{https://www.benkellman.ca}
 \end{minipage}
 
@@ -123,9 +138,13 @@
   \item Worked as part of a SCRUM team for 8 months
 }
 
+\grayhline
+\vspace{0.5\baselineskip}
 \resumeSection{University of Victoria}{STEM Instructor(2018)}{
   \item Worked with teachers to deliver over 30 in class STEM workshops
-  \item Developed original STEM related camp curriculum under tight time pressure 
+  \item Developed original STEM related camp curriculum under tight time pressure
   that many parents claimed were their kids favorite activies
 }
+
+
 \end{document}
