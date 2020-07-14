@@ -10,11 +10,11 @@ script:
 
 deploy:
   provider: releases
-  api_key:
+  skip_cleanup: true
+  token:
     secure: RoB/pGZpLzqxnUTyrytC0IAtdlDrsAeRpJD6h2YSb6LxnMmbZmwkmqmeXJf7nwTFWqGPK8fhQAuFBfAH+x7SxuE07T69AMa4x9IxvAJX6+63Fe/02ZRdJWPPwJitr2hjINUwrNftV7RNbTVTVn2FXhqbHrv3G4hF3cher02MTGUyXoC7G3KjFSSuxBoqiO/4PP1z88uVpCL3aiL5lCvfChWo8cFOF6p0slOtGmB565VEFeB1Fe8qhjIBAEs1ameZuM0eWCNzh9sD+ZOxd8KLeDauSSgvxzwSHD5dTkc0ymXpykY2tlHFsa87Nd1QWsBIlA0yVXeVqVG9eGTWkegerUhdh54CJcBevDPo2r8BFncST5U/R5q7vRkQ4SOziz0wliCQ0DtuTcJzj1ukq4F9FtZyQjKOIxQi3D3QeGE0xYwVW8uRGwGKRbKwoQq54ZMgGp5PmGzN0DGq+x0cBbJxmgF+GXqNj8C2WQ6d6edo45DIMnIBBmrrjGuw9nsb2932LLuAchValna1CaX1bo+66LAhj+d24AcMSOhm+CxFjiXQbH2p/01q7BBYbC+5dNVoNNQ2NRdIuxqHk7/QzWb02yPcx//InpOhop6ibcrutGrCyv5b6if7LqlD8Q5CYpPbXm+u6KzpqdNWi8LgYE3kc9LK4n/IhIQXQN69CqoGwqY=
   file:
     - $TRAVIS_BUILD_DIR/src/main.pdf
   on:
-    tag: 'true'
+    tags: 'true'
     branch: master
-  cleanup: false
