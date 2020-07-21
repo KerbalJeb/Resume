@@ -11,6 +11,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{qrcode}
 \usepackage{ragged2e}
+\usepackage[none]{hyphenat}
 
 \renewcommand\familydefault{\sfdefault}
 \pagenumbering{gobble}
@@ -66,38 +67,10 @@
 
 \begin{minipage}[t]{0.65\textwidth}
   \section{projects}
-% TODO: Break into separate doc and reorder
-% TODO: Switch to paragraph format
-  \resumeSection{VEX Robot}{2018}{
-      \item Worked with two students to build and test a robot
-      \item Programmed in C to find a IR beacon using photodiodes
-      \item Proved to be the fastest and most reliable design out of our lab section
-  }
-
-  \grayhline
-  \resumeSection{Magnetic Levitator}{2020}{
-      \item Suspended a neodymium magnet through the use of an electromagnet
-      \item Utilized an Arduino and hall effect sensors to provide feedback control(PID)
-  }
-
-  \grayhline
-  \resumeSection{Reflow Oven}{2020}{
-      \item Used a STM32 MCU to create a reflow oven controller
-      \item Created USB interface to control set profile
-      \item Created custom PCB in Altium for MCU and control circuitry
-  }
-
-  \grayhline
-  \resumeSection{Alarm Clock}{2020}{
-      \item Design project to create an Arduino based alarm clock
-      \item Worked with a partner to design custom PCB in KiCAD
-      \item Remotely collaberated on code and PCB using GitHub
-  }
-
+  \input{projects.tex}
   \textit{See \underline{\href{www.benkellman.ca}{benkellman.ca}} for more details}
 
   \section{skills}
-  %TODO Try to improve formatting of this one
   \resumeSection{Langages}{Libraries/Tools}{
     \item C, C++, Python, Matlab
     \item GoogleTest, FreeRTOS, PyTest, Numpy, OpenCV,\\ TravisCI, GCC toolchain, Docker, Git, Perforce
@@ -125,9 +98,17 @@
 
   \section{about me}
   \paragraph{}
-  % TODO: FIll in about me section
+  \raggedright
+  I'm currently pursuing my BEng in Electrical Engineering at the University of Victoria. When I'm not too busy with school I like to start a variety of personal MCU based electronics and programming projects, that I occasionally finish. I also enjoy working on some laser cutting and 3D printing projects at my local makerspace when time allows. Some of my less technical interests include gaming and SciFi books/shows. Some of my favorites include games such as Kerbal Space Program and Stellaris, along with SciFi franchise such The Expanse and Bobiverse.
+  \paragraph{}
+  For more info scan to QR code below to see my website.
 
+  \vspace*{3em}
+  \centering
   \qrcode{https://www.benkellman.ca}
+
+
+
 \end{minipage}
 
 \section{experience}
