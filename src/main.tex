@@ -4,177 +4,132 @@
 \author{Ben Kellman}
 \title{Resume}
 
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
 \usepackage{titling}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{enumitem}
-\usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
+\usepackage{qrcode}
+\usepackage{ragged2e}
+\usepackage[none]{hyphenat}
 
-\renewcommand{\familydefault}{\sfdefault}
+\renewcommand\familydefault{\sfdefault}
 \pagenumbering{gobble}
 
 
 \titleformat{\section}
-{\large \MakeUppercase}
-{}
+{\large}
+{\MakeUppercase{#1}}
 {0em}
-{\vspace{-0.6em}}[\rule{\textwidth}{0.1em}]
+{\vspace{-0.6em}}[\rule{\textwidth}{1.5pt}]
 
-\renewcommand{\maketitle}{
-\begin{center}
-    \textbf{\LARGE{\MakeUppercase{Ben Kellman}}}
-
-    \vspace{0.75em}
-    \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}}
-
-\end{center}
+\newcommand{\grayhline}{
+  \noindent\makebox[\linewidth]{\textcolor{gray}{\rule{0.95\textwidth}{1pt}}}\\
+}
+%TODO Clean up these commands to make them more useful
+\newcommand{\minicolumns}[2]{
+  \begin{minipage}[t]{0.25\textwidth}
+    \begin{flushright}
+      #1
+    \end{flushright}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.7\textwidth}
+    #2
+  \end{minipage}
 }
 
-\newcommand{\ritem}[1]{
-\item\hfill {#1}
-}
-
-\newcommand{\fancybullet}[2]{
-{ {
-
-
-\parbox[t]{5.5cm}{
-\begin{minipage}[t]{5.5cm}
-   \begin{list}{\quad}{}
-   \itemsep-0.2em
-     #1
-   \end{list}
-\end{minipage}
-}
-\parbox[t]{13cm}{
-\begin{minipage}[t]{13cm}
-   \begin{itemize}
-   \itemsep-0.2em
-     #2
-   \end{itemize}
-\end{minipage}
-}}\newline}
+\newcommand{\resumeSection}[3]{
+  \minicolumns{
+      \textbf{#1}\\
+      \textit{#2}
+    }
+    {
+      \begin{itemize}[leftmargin=*]
+          \justifying
+          \setlength\itemsep{-0.1em}
+          #3
+      \end{itemize}
+  }
+  \vspace{0.5\baselineskip}
 }
 
 \begin{document}
 
-\maketitle
+\begin{center}
+  \textbf{\LARGE{\MakeUppercase{Ben Kellman}}}
 
-\section{education}
-\fancybullet{
-\ritem{\bfseries University of Victoria}
-\ritem{Sept 2017-Present}
-}{
-\item Bachelor of Electrical Engineering (Term 2A)
-\item GPA: 8.5/9.0
-}
+  \vspace{0.75em}
+  \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}} -- \underline{\href{www.BenKellman.ca}{www.benkellman.ca}}
 
-\section{skills}
-\fancybullet{
-\ritem{\bfseries Programming}
-}{
-\item C, C++, C\#, Python
-}
-\fancybullet{
-\ritem{\bfseries Software}
-}{
-\item MS Office Suit, \LaTeX, Autodesk Inventor
-}
+\end{center}
+\vspace{1em}
 
-\fancybullet{
-\ritem{\bfseries Hardware}
-}{
-\item Soldering, Breadboarding, PCB Design(Eagle), PC Assembly, Basic Lab \newline Equipment(Oscilloscope, Function Generator, ect.)
-}
+\begin{minipage}[t]{0.65\textwidth}
+  \section{projects}
+  \input{projects.tex}
+  \textit{See \underline{\href{www.benkellman.ca}{benkellman.ca}} for more details}
 
+  \section{skills}
+  \resumeSection{Langages}{Libraries/Tools}{
+    \item C, C++, C\#, Python, Matlab
+    \item GoogleTest, FreeRTOS, PyTest, Numpy, OpenCV,\\
+    TravisCI, GCC toolchain, Docker, Git, Perforce
+  }
+
+  \grayhline
+  \resumeSection{Software}{}{
+    \item MS Office Suit, Altium, KiCAD, Elciplse, VSCode, CLion, PyCharm,
+    Unity3D, Windows/Linux Terminal, Solidworks
+  }
+
+  \grayhline
+  \resumeSection{Hardware}{}{
+    \item Soldering, Breadboarding, Laser Cutting, 3D Printing,\\
+    Electronics Lab Equipment
+  }
+
+\end{minipage}
+\begin{minipage}[t]{0.34\textwidth}
+  \section{education}
+  \begin{itemize}[leftmargin=*]
+    \setlength\itemsep{-0.1em}
+    \item Attending the University of Victoria
+    \item Term 3B of my BEng in\\ Electric Engineering
+    \item Current GPA: 8.8/9.0
+  \end{itemize}
+
+  \section{about me}
+  \paragraph{}
+  \raggedright
+  I'm currently pursuing my BEng in Electrical Engineering at the University of Victoria. I like to start a variety of personal MCU based electronics and programming projects in my free time.  I also enjoy working on some laser cutting and 3D printing projects at my local makerspace . Some of my less technical interests include gaming and SciFi books/shows. Some of my favourite games include games such as Kerbal Space Program and Stellaris. The Expanse, Bobiverse and Star Trek are some of my favourite SciFi franchise.
+  \paragraph{}
+  For more info scan to QR code below to see my website.
+
+  \vspace*{3em}
+  \centering
+  \qrcode{https://www.benkellman.ca}
+
+
+
+\end{minipage}
 
 \section{experience}
-\fancybullet{
-\ritem {\bfseries University of Victoria}
-\ritem {Science Venture Instructor}
-\ritem{Jun 2018-Sept 2018}
-}{
-\item Worked with teachers to deliver in class STEM workshops
-\item Developed original STEM related camp curriculum under tight time pressure
-\item Worked with office staff, high school volunteers and a partner to co-run STEM summer camp for 8 weeks
-}
-\vspace{1em}
-\fancybullet{
-\ritem{\bfseries Science Venture}
-\ritem{Volunteer}
-\ritem{2016-2017}
-}{
-\item Supported campers in competing STEM related activities such as Arduino projects
-\item Assisted with supervising campers in grades K-9
+\resumeSection{Schneider Electric}{Firmware Test(2019/2020)}{
+  \item Wrote and exicuited manual and automated tests on smart power meteres (Cortex A and VxWorks based)
+  \item Worked closely with both dev and test teams to develop new test cases
+  \item Tested a varity of communications protocals using PyTest(Python testing framework) such as telnet, SSH, SFTP and more
+  \item Worked as part of a SCRUM team for 8 months
 }
 
-\section{projects}
-\fancybullet{
-\ritem{\bfseries{VEX Robot}}
-\ritem{Engineering Design Project}
-}
-{
-\item Led a team of two other engineering students to build and design a VEX robot
-\item Robot was capable of quickly locating an IR beacon and attaching a string to it
-}
-\vspace{0.3em}
-\fancybullet{
-\ritem{\bfseries{Magnetic Levitation}}
-\ritem{Personal Arduino Project}
-}
-{
-\item Suspended a neodymium magnet through the use of an electromagnet
-\item Utilized an Arduino and hall effect sensors to provide feedback control(PID)
-}
-\vspace{0.3em}
-
-\vspace{0.3em}
-\fancybullet{
-\ritem{\bfseries{Personal Computer}}
-\ritem{Built for Gaming \& Blender}
-}
-{
-\item Researched best priced components for my needs
-\item Troubleshot problems during PC assembly
+\grayhline
+\vspace{0.5\baselineskip}
+\resumeSection{University of Victoria}{STEM Instructor(2018)}{
+  \item Worked with teachers and other students to deliver over 30 in class STEM workshops
+  \item Developed original STEM related camp curriculum under tight time pressure
+  that many parents claimed were their kids favorite activies
+  \item Worked clostly with a parnter to run a summer camp for 8 weeks
 }
 
-
-\section{awards}
-
-\fancybullet{
-\ritem{Engineers \& Geoscientists BC}
-\ritem{President's \& Dean's}
-\ritem{Entrance Award}
-}
-{
-\item University of Victoria, 2018
-\item University of Victoria, 2017
-}
-
-
-\section{interests}
-
-\fancybullet{
-\ritem{Microcontroller Projects}
-\ritem{Model Making}
-\ritem{Sci-Fi}
-}
-{
-\item Using Arduinos and recently STM32 dev boards
-\item Both physical models from kits and virtual models using Blender
-\item Shows and books such as Star Trek, The Expanse and HG2G
-}
-\vfill
-\textit{References Available on Request}
 
 \end{document}
-
-\fancybullet{
-\ritem{\bfseries{Twitter Powered Robot}}
-\ritem{Personal IoT Project}
-}
-{
-\item
-\item
-}
