@@ -66,32 +66,30 @@
 
 \end{center}
 
-\section{Education}
-\resumeSection{University of Victoria}{September 2017 - December 2023}{Bachelor of Engineering in Computer Engineering, GPA:8.8/9.0}{}
-
 \section{experience}
 
 \resumeSection{Center for Aerospace Research (UVic)}{September 2021 - August 2022}
 {Participated in the development of ORCASat, a student-built and designed 2u CubeSat, that was launched to provide an optical reference for calibrating ground-based telescopes. Worked on firmware development for the electrical power system and the on-board computer. (See \url{https://www.orcasat.ca/})}
 {
-  \item Worked with a team to develop firmware for the FreeRTOS based on-board computer
-  \item Developed automated Hardware-in-the-Loop (HIL) tests and unit tests for ORCASat using PyTest
-  \item Assisted in debugging and fixing subsystem integration problems
-  \item Sole developer for the telemetry collection firmware for the electrical power system (EPS) 
-  \item Automated battery capacity testing by controlling test equipment with Python scripts
-  \item Assisted in the development of ground support software (C\# and Python)
+  \item Independently developed EPS telemetry collection firmware to sample voltage from 31 different sensors measuring current, voltage and temperature and generate statistics based on each sensor that provided valuable data during flight
+  \item Independently developed a C\# (WPF) application to interface with the EPS firmware and generate live plots of the telemetry that was used extensively during the pre-launch testing and integration of the satellite
+  \item Developed Python scripts to automated test equipment used to measure battery capacity and recharge efficiency that where used to choose and qualify flight cells
+  \item Worked on many small improvements and bug fixes for the FreeRTOS based on-board computer, such as improving the file system performance by 10x
+  \item Developed new and fixed existing HIL (hardware in the loop) tests for the satellite using Python and PyTest to improve test coverage and reliability
 }
 
 \resumeSection{Schneider Electric}{September 2019 - April 2020}
   {Worked on the firmware test team to develop HIL and manual tests for smart power meters}{
-  \item Worked with PyTest and Jenkins to develop automated integration tests for smart power meters
-  \item Wrote and executed manual tests cases
-  \item Worked as part of a SCRUM team consisting of firmware and test engineers
+  \item Worked with PyTest to develop automated HIL to test new features, such as sftp file transfers on the smart power meters
+  \item Wrote and executed manual tests cases that uncovered bugs related to the power meter's display user interface
+  \item Worked closely with both dev and test teams to develop new test cases
 }
 
 \section{projects}
 \input{projects.tex}
 
+\section{Education}
+\resumeSection{University of Victoria}{September 2017 - December 2023}{Bachelor of Engineering in Computer Engineering, GPA:8.8/9.0}{}
 \section{Skills}
 \textbf{Programming:} C, C++, C\#, Matlab, Python, PyTest, Catch2, CMake, FreeRTOS, Bare Metal, Git, ARM, AVR, UART, I2C, USB, SPI\\
 \textbf{Hardware:} Logic Analyzer, Oscilloscope, SMD \& THT Soldering and Rework, Altium, KiCad, Solidworks, DC Load, 3D Printing\\

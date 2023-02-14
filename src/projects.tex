@@ -1,8 +1,7 @@
 
 \resumeSection{C++ and OpenGL Falling Sand Game}{}
 {Created a basic 'falling sand' game that simulates and renders the interaction between different particles. See \url{https://youtu.be/FlTeCNOKR9w} for a demo}{
-    \item Written in C++20 and built using CMake
-    \item Unit tested using the Catch2 framework
+    \item Written in C++20 and built using CMake and unit tested using the Catch2 framework
 }
 
 \resumeSection{Computer Vision Position Estimator}{}
@@ -12,9 +11,18 @@
     \item Computed the position and rotation of markers in real time with millimeter accuracy
 }
 
-\resumeSection{USB Firmware Driver}{}
-{Wrote a custom device-side USB 'stack' for the USB peripheral on an STM32 MCU to make it behave as a serial port (CDC Class)}{
-    \item Wrote a driver to implement a USB virtual com port
-    \item Written in C for an STM32F0 MCU on a custom PCB
-    \item Used a logic analyzer to debug the driver
+% \resumeSection{USB Firmware Driver}{}
+% {Wrote a custom device-side USB 'stack' for the USB peripheral on an STM32 MCU to make it behave as a serial port (CDC Class) without using vendor provided libraries}{
+%     \item Wrote a driver to implement a USB virtual com port
+%     \item Written in C for an STM32F0 MCU on a custom PCB
+%     \item Used a logic analyzer to debug the driver
+% }
+
+\resumeSection{Conveyor Belt Sorter}{}
+{Worked with a partner to develop firmware for a conveyor belt and sorter system that was able to sort and classify 48 items based on reflectivity in 22 seconds (class project)}
+{
+    \item Implemented UART command line interface that proved very useful during testing and development
+    \item Developed stepper motor control and trapezoidal path planning to optimize travel times
+    \item Implemented a logistic regression based classifier to identify cylinders of four different material based on reflectivity
+    \item Wrote custom CMake scripts to build and upload the firmware to the AVR target
 }
