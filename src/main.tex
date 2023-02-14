@@ -18,117 +18,82 @@
 
 
 \titleformat{\section}
-{\large}
+{\bfseries\normalsize}
 {\MakeUppercase{#1}}
 {0em}
-{\vspace{-0.6em}}[\rule{\textwidth}{1.5pt}]
+{\vspace{-0.75em}}[\rule{\textwidth}{1.5pt}]
+
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 
 \newcommand{\grayhline}{
   \noindent\makebox[\linewidth]{\textcolor{gray}{\rule{0.95\textwidth}{1pt}}}\\
 }
 %TODO Clean up these commands to make them more useful
 \newcommand{\minicolumns}[2]{
-  \begin{minipage}[t]{0.25\textwidth}
+  \begin{minipage}[t]{0.2\textwidth}
     \begin{flushright}
       #1
     \end{flushright}
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.7\textwidth}
+  \begin{minipage}[t]{0.75\textwidth}
     #2
   \end{minipage}
 }
 
-\newcommand{\resumeSection}[3]{
-  \minicolumns{
-      \textbf{#1}\\
-      \textit{#2}
-    }
-    {
-      \begin{itemize}[leftmargin=*]
-          \justifying
-          \setlength\itemsep{-0.1em}
-          #3
-      \end{itemize}
-  }
-  \vspace{0.5\baselineskip}
+\newcommand{\resumeSection}[4]{
+      \textbf{#1} \hfill #2\\
+      \if\relax\detokenize{#3}\relax
+      \else
+        #3
+      \fi    
+      \if\relax\detokenize{#4}\relax
+      \else
+      \begin{itemize}
+        \justifying
+        \setlength\itemsep{-0.1em}
+        #4
+    \end{itemize}
+      \fi    
+
 }
 
 \begin{document}
 
 \begin{center}
-  \textbf{\LARGE{\MakeUppercase{Ben Kellman}}}
-
-  \vspace{0.75em}
-  \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}} -- \underline{\href{www.BenKellman.ca}{www.benkellman.ca}}
+  \textbf{\Large{\MakeUppercase{Ben Kellman}}}\\
+  \underline{\href{mailto: kellman.ben@gmail.com}{kellman.ben@gmail.com}}
 
 \end{center}
-\vspace{1em}
 
-\begin{minipage}[t]{0.65\textwidth}
-  \section{projects}
-  \input{projects.tex}
-  \textit{See \underline{\href{www.benkellman.ca}{benkellman.ca}} for more details}
-
-  \section{skills}
-  \resumeSection{Languages}{Libraries/Tools}{
-    \item C, C++, C\#, Python, Matlab
-    \item GoogleTest, FreeRTOS, PyTest, Numpy, OpenCV,\\
-    TravisCI, GCC toolchain, Docker, Git, Perforce
-  }
-
-  \grayhline
-  \resumeSection{Software}{}{
-    \item MS Office Suit, Altium, KiCAD, Elciplse, VSCode, Unity3D, Solidworks
-  }
-
-  \grayhline
-  \resumeSection{Hardware}{}{
-    \item Soldering, Breadboarding, Laser Cutting, 3D Printing,\\
-    Electronics Lab Equipment
-  }
-
-\end{minipage}
-\begin{minipage}[t]{0.34\textwidth}
-  \section{education}
-  \begin{itemize}[leftmargin=*]
-    \setlength\itemsep{-0.1em}
-    \item Attending the University of Victoria
-    \item Term 4A of my BEng in\\ Electric Engineering
-    \item Current GPA: 8.8/9.0
-  \end{itemize}
-
-  \section{about me}
-  \paragraph{}
-  \raggedright
-  I'm currently pursuing my BEng in Electrical Engineering at the University of Victoria. I like to start a variety of personal MCU based electronics and programming projects in my free time.  I also enjoy working on some laser cutting and 3D printing projects at my local makerspace . Some of my less technical interests include gaming and SciFi books/shows. The Expanse, Bobiverse and Star Trek are some of my favourite SciFi franchise.
-  \paragraph{}
-  For more info scan to QR code below to see my website.
-
-  \vspace*{3em}
-  \centering
-  \qrcode{http://www.benkellman.ca}
-
-
-
-\end{minipage}
+\section{Education}
+\resumeSection{University of Victoria}{September 2017 - December 2023}{Bachelor of Engineering in Computer Engineering, GPA:8.8/9.0}{}
 
 \section{experience}
-\resumeSection{Schneider Electric}{Firmware Test(2019/2020)}{
-  \item Wrote and executed manual and automated tests on smart power metres (Cortex A and VxWorks based)
-  \item Worked closely with both dev and test teams to develop new test cases
-  \item Tested a variety of communications protocols using PyTest(Python testing framework) such as telnet, SSH, SFTP and more
-  \item Worked as part of a SCRUM team for 8 months
+
+\resumeSection{Center for Aerospace Research (UVic)}{September 2021 - August 2022}
+{Participated in the development of ORCASat, a student-built and designed 2u CubeSat, that was launched to provide an optical reference for calibrating ground-based telescopes. Worked on firmware development for the electrical power system and the on-board computer. (See \url{https://www.orcasat.ca/})}
+{
+  \item Worked with a team to develop firmware for the FreeRTOS based on-board computer
+  \item Developed automated Hardware-in-the-Loop (HIL) tests and unit tests for ORCASat using PyTest
+  \item Assisted in debugging and fixing subsystem integration problems
+  \item Sole developer for the telemetry collection firmware for the electrical power system (EPS) 
+  \item Automated battery capacity testing by controlling test equipment with Python scripts
+  \item Assisted in the development of ground support software (C\# and Python)
 }
 
-\grayhline
-\vspace{0.5\baselineskip}
-\resumeSection{University of Victoria}{STEM Instructor(2018)}{
-  \item Worked with teachers and other students to deliver over 30 in class STEM workshops
-  \item Developed original STEM related camp curriculum under tight time pressure
-  that many parents claimed were their kids favorite actives
-  \item Worked closely with a partner to run a summer camp for 8 weeks
+\resumeSection{Schneider Electric}{September 2019 - April 2020}
+  {Worked on the firmware test team to develop HIL and manual tests for smart power meters}{
+  \item Worked with PyTest and Jenkins to develop automated integration tests for smart power meters
+  \item Wrote and executed manual tests cases
+  \item Worked as part of a SCRUM team consisting of firmware and test engineers
 }
 
+\section{projects}
+\input{projects.tex}
+
+\section{Skills}
+\textbf{Programming:} C, C++, C\#, Matlab, Python, PyTest, Catch2, CMake, FreeRTOS, Bare Metal, Git, ARM, AVR, UART, I2C, USB, SPI\\
+\textbf{Hardware:} Logic Analyzer, Oscilloscope, SMD \& THT Soldering and Rework, Altium, KiCad, Solidworks, DC Load, 3D Printing\\
 
 \end{document}

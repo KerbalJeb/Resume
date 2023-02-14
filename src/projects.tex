@@ -1,28 +1,20 @@
-\resumeSection{USB Firmware Driver}{}{
+
+\resumeSection{C++ and OpenGL Falling Sand Game}{}
+{Created a basic 'falling sand' game that simulates and renders the interaction between different particles. See \url{https://youtu.be/FlTeCNOKR9w} for a demo}{
+    \item Written in C++20 and built using CMake
+    \item Unit tested using the Catch2 framework
+}
+
+\resumeSection{Computer Vision Position Estimator}{}
+{Worked with a team of students to develop a prototype sensor system to allow for autonomous charging for electric marine vessels}{
+    \item Developed a Python application using OpenCV to demonstrate marker position estimation
+    \item Tested system under different lighting and weather conditions
+    \item Computed the position and rotation of markers in real time with millimeter accuracy
+}
+
+\resumeSection{USB Firmware Driver}{}
+{Wrote a custom device-side USB 'stack' for the USB peripheral on an STM32 MCU to make it behave as a serial port (CDC Class)}{
     \item Wrote a driver to implement a USB virtual com port
-    \item Written in C for a STM32F0 MCU on a custom PCB
+    \item Written in C for an STM32F0 MCU on a custom PCB
     \item Used a logic analyzer to debug the driver
-    \item Greatly reduced the RAM and FLASH footprint compared to the vendor
-    provided USB stack
 }
-
-\grayhline
-\resumeSection{Alarm Clock}{}{
-    \item Design project to create an Arduino based alarm clock
-    \item Worked with a partner to design custom PCB in KiCAD
-    \item Remotely collaborated on code and PCB using GitHub
-}
-
-\grayhline
-\resumeSection{Unity3D Game (C\#)}{}{
-    \item Created a basic tile-based spaceship game in Unity3D with two other students
-    \item Created a basic UI and JSON based saving/loading system
-    \item Optimized preformance to handle a large number of tiles being dynamically destroyed
-}
-
-\grayhline
-\resumeSection{Magnetic Levitator}{}{
-    \item Suspended a neodymium magnet through the use of an electromagnet
-    \item Utilized an Arduino and hall effect sensors to provide feedback control(PID)
-}
-
